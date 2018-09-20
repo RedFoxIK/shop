@@ -1,0 +1,14 @@
+<div class="cart-list">
+    <h3 [class]="isEmpty ? 'center-align' : ''">{{cartMessage}}</h3>
+        <div class="product-item" *ngFor="let product of products">
+            <app-product [name]=product.name [imageName]=product.imageName [price]=product.price [isAvailable]=product.isAvailable
+                (buy)=onBuy($event)>
+            </app-product>
+            <button type="button" class="btn btn-default btn-sm" (click)="onRemove(product)">
+                <span class="glyphicon glyphicon-remove"></span> Remove
+            </button>
+        </div>
+    <div *ngIf="!isEmpty" class="total">
+        <h3>Total price: {{totalPrice}}$</h3>
+    </div>
+</div>

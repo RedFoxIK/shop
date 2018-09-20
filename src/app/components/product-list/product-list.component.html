@@ -1,0 +1,12 @@
+<app-cart (clickCart)="clickCart.emit($event)" [isEmpty]=isEmptyCart></app-cart>
+
+<div class="product-list">
+    <div class="product-wrapper col-xs-6 col-sm-4 col-lg-3" *ngFor="let product of products">
+        <div class="product-item">
+            <app-product [name]=product.name [imageName]=product.imageName [price]=product.price [isAvailable]=product.isAvailable
+                (buy)=onBuy($event)>
+            </app-product>
+            <button type="button" class="btn btn-default" [disabled]="!product.isAvailable" (click)="onBuy(product)">BUY</button>
+        </div>
+    </div>
+</div>

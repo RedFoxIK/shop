@@ -1,0 +1,19 @@
+.cart-list {
+    text-align: left;
+    margin: 10px 40px;
+}
+
+.product-item {
+    margin: 10px;
+    padding: 20px;
+    border: 1px dashed blue;
+    width: 40%;
+}
+
+.total {
+    margin: 20px;
+}
+
+.center-align {
+    text-align: center;
+}
