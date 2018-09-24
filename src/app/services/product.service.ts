@@ -1,7 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-
-import { Observable } from 'rxjs';
 
 import { Product } from '../models/product.model';
 import { Category } from '../enums/category.enum';
@@ -13,7 +10,7 @@ import { isNullOrUndefined } from 'util';
 export class ProductService {
   products: Array<Product>;
 
-  constructor(private http: Http) { }
+  constructor() { }
 
   getAvailableProducts(): Array<Product> {
     if (isNullOrUndefined(this.products)) {
@@ -34,7 +31,7 @@ export class ProductService {
       new Product(8, 'Samsung galaxy 6s', 'samsung-phone.png', 802, Category.PHONE),
       new Product(9, 'Monster Beats', 'monster_beats.png', 159, Category.OTHERS),
       new Product(10, 'Sony headphones', 'sony_headphones.png', 212, Category.OTHERS),
-      new Product(10, 'Xiaomi Redmi Note 4', 'xiaomi-redmi-note-4.png', 315, Category.PHONE)
+      new Product(11, 'Xiaomi Redmi Note 4', 'xiaomi-redmi-note-4.png', 315, Category.PHONE)
     ];
   }
 }

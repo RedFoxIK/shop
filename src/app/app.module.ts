@@ -1,14 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-
 import { CartComponent } from './components/cart/cart.component';
-
-import { ProductListComponent } from './components/product-list/product-list.component';
-import { HttpModule } from '@angular/http';
 import { ProductComponent } from './components/product/product.component';
-import { CarlListProductComponent } from './components/cart-list-product/cart-list-product.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { CartListProductComponent } from './components/cart-product-list/cart-product-list.component';
 
 
 @NgModule({
@@ -17,11 +14,10 @@ import { CarlListProductComponent } from './components/cart-list-product/cart-li
     ProductComponent,
     CartComponent,
     ProductListComponent,
-    CarlListProductComponent
+    CartListProductComponent
   ],
   imports: [
-    BrowserModule,
-    HttpModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

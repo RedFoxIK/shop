@@ -4,11 +4,11 @@ import { Product } from '../../models/product.model';
 import { CartService } from '../../services/cart.service';
 
 @Component({
-  selector: 'app-cart-list-product',
-  templateUrl: './cart-list-product.component.html',
-  styleUrls: ['./cart-list-product.component.css']
+  selector: 'app-cart-product-list',
+  templateUrl: './cart-product-list.component.html',
+  styleUrls: ['./cart-product-list.component.css']
 })
-export class CarlListProductComponent implements OnInit {
+export class CartListProductComponent implements OnInit {
   cartMessage = 'Your product list: ';
   totalPrice = 0;
   isEmpty: boolean;

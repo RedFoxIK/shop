@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { Category } from '../../enums/category.enum';
 import { Color } from '../../enums/color.enum';
+import { Product } from '../../models/product.model';
 
 
 @Component({
@@ -11,13 +12,7 @@ import { Color } from '../../enums/color.enum';
 })
 export class ProductComponent implements OnInit {
   @Input()
-  name: string;
-  @Input()
-  price: number;
-  @Input()
-  imageName: string;
-  @Input()
-  isAvailable: boolean;
+  product: Product;
 
   description: string;
   rating: number;
@@ -31,11 +26,11 @@ export class ProductComponent implements OnInit {
   }
 
   getImageLink(): string {
-    return '../../assets/images/' + this.imageName;
+    return '../../assets/images/' + this.product.imageName;
   }
 
   onBuy(event: any) {
     console.log('The item');
-    this.isAvailable = false;
+    this.product.isAvailable = false;
   }
 }
