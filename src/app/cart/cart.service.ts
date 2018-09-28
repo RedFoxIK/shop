@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Product } from '../models/product.model';
+import { Product } from '../product/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +29,15 @@ export class CartService {
 
   isEmpty(): boolean {
     return this.baughtProducts.length === 0;
+  }
+
+  getTotalPrice(): number {
+    let totalPrice = 0;
+    this.baughtProducts.forEach(p => totalPrice += p.price);
+    return totalPrice;
+  }
+
+  getTotalAmount(): number {
+    return this.baughtProducts.length;
   }
 }

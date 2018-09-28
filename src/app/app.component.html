@@ -1,10 +1,12 @@
 <div class="main">
+    <h1 #appTitle></h1>
+
     <div *ngIf="!showBougthProducts; else cartProductList">
         <app-product-list (clickCart)="showCartProductList($event)"></app-product-list>
     </div>
 
     <ng-template #cartProductList>
-        <app-cart-product-list></app-cart-product-list>
+        <app-cart-list></app-cart-list>
         <button (click)="showCartProductList(false)" class="btn btn-primary btn-lg">Back</button>
     </ng-template>
 </div>

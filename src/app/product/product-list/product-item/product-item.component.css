@@ -1,0 +1,23 @@
+.product {
+    padding: 5px;
+ }
+
+.product img {
+    width: 80px;
+    height: 80px;
+}
+
+.expensive h4 {
+    text-shadow: 1px 1px;
+    color: gold;
+}
+
+.cheap h4 {
+    font-style: italic;
+    color: grey;
+}
+
+.not_available {
+    opacity: 0.5;
+    color: red;
+}

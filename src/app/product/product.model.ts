@@ -1,7 +1,7 @@
-import { Category } from '../enums/category.enum';
+import { Category } from './category.enum';
 
 export class Product {
-    constructor( public id: number,
+    constructor(public id: number,
         public name: string,
         public imageName: string,
         public price: number,
