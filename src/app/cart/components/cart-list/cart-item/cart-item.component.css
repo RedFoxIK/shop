@@ -1,0 +1,32 @@
+.product {
+    padding: 5px;
+ }
+
+.product img {
+    width: 80px;
+    height: 80px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.image-wrapper {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.amount {
+    display: inline-block;
+}
+
+.amount input {
+    width: 30px;
+    text-align: center;
+}
+
+.disable-button {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

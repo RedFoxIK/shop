@@ -1,0 +1,11 @@
+.contact {
+    float: right;
+    text-align: center;
+    border-radius: 15px;
+    margin-right: 40px;
+}
+
+.contact button {
+    border-radius: 25px;
+    background: lightyellow;
+}

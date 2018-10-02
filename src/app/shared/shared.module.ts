@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { HighlightParentDirective } from './highlight.directive';
+import { HighlightParentDirective } from './directives/highlight.directive';
 
 @NgModule({
     declarations: [HighlightParentDirective],
     exports: [HighlightParentDirective],
-    providers: [],
+    providers: []
   })
   export class SharedModule { }

@@ -1,9 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { Product } from '../product.model';
-import { ProductService } from '../product.service';
-import { CartService } from '../../cart/cart.service';
-
+import { Product } from '../../models/product.model';
+import { ProductService } from '../../services/product.service';
+import { CartService } from '../../../cart/services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -27,8 +26,8 @@ export class ProductListComponent implements OnInit {
   }
 
   onBuy(product: Product): void {
-    product.isAvailable = false;
+    product.choosen = true;
     this.isEmptyCart = false;
-    this.cartService.addBaughtProduct(product);
+    this.cartService.addProduct(product);
   }
 }

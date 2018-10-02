@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Product } from '../../product.model';
+import { Product } from '../../../models/product.model';
 
 @Component({
   selector: 'app-product',
@@ -21,11 +21,11 @@ export class ProductComponent implements OnInit {
   }
 
   onBuy() {
-    this.product.isAvailable = false;
+    this.product.choosen = true;
   }
 
   setClasses() {
-    const available = this.product.isAvailable;
+    const available = this.product.isAvailable();
     return {
       not_available: !available,
       expensive: this.product.price >= 500 && available,

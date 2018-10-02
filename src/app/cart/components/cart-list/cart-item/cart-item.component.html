@@ -1,0 +1,14 @@
+<div class="product">
+  <div class="image-wrapper">
+    <img [src] = getImageLink()> <span class="name">{{ product.name }}</span> - {{ product.price | currency : 'USD' : 'symbol' : '.2-2' }} 
+  </div>
+  <div class="amount">
+    <a class="btn btn-sm btn-danger" (click) = removeProductItem() [ngClass] = "{ 'disable-button' : itemsAmount <= 1 }">
+        <span class="glyphicon glyphicon-minus-sign"></span>
+     </a>
+    <input type="text" [value] = itemsAmount disabled> 
+    <a class="btn btn-sm btn-success" (click) = addProductItem() [ngClass] = "{ 'disable-button' : itemsAmount >= product.amount }">
+        <span class="glyphicon glyphicon-plus-sign"></span> 
+    </a>
+    </div>
+</div>

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { Category } from './category.enum';
 import { isNullOrUndefined } from 'util';
-import { Product } from './product.model';
+import { Product } from '../models/product.model';
+import { Category } from '../enums/category.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +19,20 @@ export class ProductService {
     return this.products;
   }
 
+  substractProducts(productsAmount: Array<[Product, number]>): void {
+    productsAmount.forEach(productAmount => {
+      const foundedProduct = this.products.find(product => product === productAmount['0']);
+      if (foundedProduct) {
+        foundedProduct.amount -= productAmount['1'];
+        foundedProduct.choosen = false;
+      }
+    });
+  }
+
   private getDefaultProductsList(): Array<Product> {
     return [
       new Product(1, 'Apple Iphone 6s', 'iphone.png', 1099, Category.PHONE),
-      new Product(2, 'Mouse logitech', 'mouse_logitech.png', 17, Category.OTHERS),
+      new Product(2, 'Mouse logitech', 'mouse_logitech.png', 17, Category.OTHERS, 10),
       new Product(3, 'Sony Playstation', 'playstation.png', 513, Category.GAME_CONSOLE),
       new Product(4, 'Xbox one S', 'xbox.png', 412, Category.GAME_CONSOLE),
       new Product(5, 'Xiaomi powerbank', 'xiaomi_powerbank.png', 133, Category.OTHERS),

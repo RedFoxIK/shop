@@ -1,0 +1,25 @@
+<div class="cart-list">
+    <div class="col-xs-12 col-sm-6 col-lg-6" *ngFor="let product of baughtProducts">
+        <div class="product-item">
+            <app-cart-item 
+                [product]=product[0]
+                (addItem)="addItem($event)"  
+                (removeItem)="removeItem($event)"  
+                appParentHighlight color="gold"> 
+            </app-cart-item>
+            <button type="button" 
+            class="btn btn-default btn-sm" 
+            (click)="onRemove(product)" 
+            appParentHighlight color="red">
+                <span class="glyphicon glyphicon-remove"></span> Remove
+            </button>
+        </div>
+    </div>
+    <div class="total">
+        <h3>{{ totalAmount | i18nPlural: messageMapping }} </h3>
+        <h3 *ngIf="totalAmount > 0">Total price: {{ totalPrice | currency : 'USD' : 'symbol' : '.2-2' }}</h3>
+    </div>
+</div>
+<div>
+    <button class="btn btn-info btn-lg completeBtn" (click)="completeOrder()">complete order</button>
+</div>

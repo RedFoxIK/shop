@@ -1,5 +1,4 @@
-import { Directive, HostListener, ElementRef, Renderer, Input } from '@angular/core';
-import { Product } from '../product/product.model';
+import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
 
 @Directive({
     selector: '[appParentHighlight]'
@@ -9,7 +8,7 @@ export class HighlightParentDirective {
   color: string;
 
   constructor(private el: ElementRef,
-    private renderer: Renderer) {
+    private renderer: Renderer2) {
     }
 
     @HostListener('mouseover')
@@ -28,6 +27,6 @@ export class HighlightParentDirective {
     }
 
     private changeParentColor(color: string) {
-      this.renderer.setElementStyle(this.el.nativeElement.parentElement, 'background', color);
+      this.renderer.setStyle(this.el.nativeElement.parentElement, 'background', color);
     }
 }
