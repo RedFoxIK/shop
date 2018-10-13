@@ -3,31 +3,17 @@ import { CoreModule } from '../core.module';
 
 @Injectable({providedIn: CoreModule})
 export class ConfigOptionService {
-    private id: number;
-    private login: string;
-    private email: string;
+    private configs: Map<string, string> = new Map();
 
-    public setId(id: number): void {
-        this.id = id;
+    public setCongig(key: string, value: string): void {
+        this.configs.set(key, value);
     }
 
-    public setLogin(login: string): void {
-        this.login = login;
+    public getConfig(key: string): string {
+        return this.configs.get(key);
     }
 
-    public setEmail(email: string): void {
-        this.email = email;
-    }
-
-    public getId(): number {
-        return this.id;
-    }
-
-    public getLogin(): string {
-        return this.login;
-    }
-
-    public getEmail(): string {
-        return this.email;
+    public deleteCongig(key: string): void {
+        this.configs.delete(key);
     }
 }

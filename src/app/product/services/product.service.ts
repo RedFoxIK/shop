@@ -3,20 +3,23 @@ import { Injectable } from '@angular/core';
 import { isNullOrUndefined } from 'util';
 import { Product } from '../models/product.model';
 import { Category } from '../enums/category.enum';
+import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ProductService {
   products: Array<Product>;
 
   constructor() { }
 
-  getAvailableProducts(): Array<Product> {
+  getAvailableProducts(): Promise<Array<Product>> {
     if (isNullOrUndefined(this.products)) {
       this.products = this.getDefaultProductsList();
     }
-    return this.products;
+    return new Promise((resolve) => {
+      setTimeout(() => {
+      resolve(this.products);
+      }, 500);
+    }).catch(error => error);
   }
 
   substractProducts(productsAmount: Array<[Product, number]>): void {

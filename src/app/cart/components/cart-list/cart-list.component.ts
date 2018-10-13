@@ -21,9 +21,13 @@ export class CartListComponent implements OnInit {
     this.changeTotalPriceAndAmount();
 
     this.cartService.getBaughtProductsObserver().subscribe( productsAmount => {
-      this.baughtProducts = productsAmount;
+      this.baughtProducts = [...productsAmount];
       this.changeTotalPriceAndAmount();
     });
+  }
+
+  onSelectSortOption() {
+    this.baughtProducts = [...this.baughtProducts];
   }
 
   addItem(product: Product) {

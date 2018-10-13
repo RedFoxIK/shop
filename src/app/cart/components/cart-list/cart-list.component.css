@@ -1,3 +1,7 @@
+*{
+    margin: 5px;
+}
+
 .cart-list {
     text-align: left;
     margin: 10px 40px;
